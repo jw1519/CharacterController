@@ -8,7 +8,7 @@ using UnityEngine.InputSystem;
 public class ThumbStickContoller : MonoBehaviour
 {
     public float Speed = 2.0f;
-    private NavMeshAgent player;
+    public NavMeshAgent player;
     public Animator animator;
     public float rotationspeed = 100.0f;
 
