@@ -26,8 +26,6 @@ public class ThumbStickContoller : MonoBehaviour
         float horizontal = Input.GetAxis("Horizontal");
         float vertical = Input.GetAxis("Vertical");
 
-
-
         Vector3 direction = new Vector3(0, 0, vertical).normalized;
 
         //rotate character
