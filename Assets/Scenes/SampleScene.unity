@@ -410,6 +410,7 @@ MonoBehaviour:
   Speed: 3
   animator: {fileID: 361090467}
   rotationspeed: 100
+  inputvalue: {x: 0, y: 0}
 --- !u!1 &363002016
 GameObject:
   m_ObjectHideFlags: 0

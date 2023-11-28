@@ -32,6 +32,9 @@ public class PontAndClick : MonoBehaviour
             }
             
         }
-        animator.SetFloat("speed", player.velocity.magnitude);
+        if (animator != null)
+        {
+            animator.SetFloat("speed", player.velocity.magnitude);
+        }
     }
 }

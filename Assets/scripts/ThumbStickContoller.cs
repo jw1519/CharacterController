@@ -10,7 +10,9 @@ public class ThumbStickContoller : MonoBehaviour
     private NavMeshAgent player;
     public Animator animator;
     public float rotationspeed = 100.0f;
-    private Vector2 inputvalue;
+
+    [SerializeField]
+    Vector2 inputvalue;
 
     
 
@@ -57,15 +59,17 @@ public class ThumbStickContoller : MonoBehaviour
             }
 
         }
-        void OnMove(InputValue value)
-        {
-            
-            inputvalue = value.Get<Vector2>();
-            Debug.Log(inputvalue);
-            //Vector3 input3d = new Vector3(0, 0, input.y);
-            //player.Move(transform.forward * input.y * Speed * Time.deltaTime);
-            //transform.Rotate(Vector3.up, input.x * rotationspeed * Time.deltaTime);
-            //animator.SetFloat("speed", player.velocity.magnitude);
-        }
+       
+    }
+
+    void OnMove(InputValue value)
+    {
+
+        inputvalue = value.Get<Vector2>();
+        Debug.Log(inputvalue);
+        //Vector3 input3d = new Vector3(0, 0, input.y);
+        //player.Move(transform.forward * input.y * Speed * Time.deltaTime);
+        //transform.Rotate(Vector3.up, input.x * rotationspeed * Time.deltaTime);
+        //animator.SetFloat("speed", player.velocity.magnitude);
     }
 }
