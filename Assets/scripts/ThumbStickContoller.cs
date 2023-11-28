@@ -11,6 +11,8 @@ public class ThumbStickContoller : MonoBehaviour
     public Animator animator;
     public float rotationspeed = 100.0f;
 
+    
+
     // Start is called before the first frame update
     void Start()
     {
@@ -20,15 +22,51 @@ public class ThumbStickContoller : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-    }
-    void OnMove(InputValue value)
-    {
-        Vector2 input = value.Get<Vector2>();
-        Debug.Log(input);
-        Vector3 input3d = new Vector3(0, 0, input.y);
-        player.Move(transform.forward * input.y * Speed * Time.deltaTime);
-        transform.Rotate(Vector3.up, input.x * rotationspeed * Time.deltaTime);
-        animator.SetFloat("speed", player.velocity.magnitude);
+
+        float horizontal = Input.GetAxis("Horizontal");
+        float vertical = Input.GetAxis("Vertical");
+
+
+
+        Vector3 direction = new Vector3(0, 0, vertical).normalized;
+
+        //rotate character
+        if (horizontal != 0)
+        {
+            transform.Rotate(Vector3.up, horizontal * rotationspeed * Time.deltaTime);
+            player.ResetPath();
+        }
+
+        //move character
+        if (direction.magnitude >= 0.1f)
+        {
+            if (vertical >= 0)
+            {
+                player.Move(transform.forward * vertical * Speed * Time.deltaTime);
+                player.ResetPath();
+
+            }
+            else
+            {
+                player.Move(-transform.forward * -vertical * Speed * Time.deltaTime);
+                player.ResetPath();
+            }
+            if (animator != null)
+            {
+                animator.SetFloat("speed", Mathf.Abs(vertical));
+                animator.SetFloat("direction", horizontal);
+            }
+
+        }
+        //void OnMove(InputValue value)
+        //{
+        //    player.velocity = value.Get<Vector2>() * Speed;
+        //    Vector2 input = value.Get<Vector2>();
+        //    Debug.Log(input);
+        //    Vector3 input3d = new Vector3(0, 0, input.y);
+        //    player.Move(transform.forward * input.y * Speed * Time.deltaTime);
+        //    transform.Rotate(Vector3.up, input.x * rotationspeed * Time.deltaTime);
+        //    animator.SetFloat("speed", player.velocity.magnitude);
+        //}
     }
 }
