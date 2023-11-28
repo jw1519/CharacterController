@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.InputSystem;
@@ -51,11 +52,15 @@ public class ThumbStickContoller : MonoBehaviour
                 player.Move(-transform.forward * -vertical * Speed * Time.deltaTime);
                 player.ResetPath();
             }
-            if (animator != null)
-            {
-                animator.SetFloat("speed", Mathf.Abs(vertical));
-                animator.SetFloat("direction", horizontal);
-            }
+        }
+        else
+        {
+            inputvalue = Vector2.zero;
+        }
+        if (animator != null)
+        {
+            animator.SetFloat("speed", Mathf.Abs(vertical));
+            animator.SetFloat("direction", horizontal);
         }
     }
     void OnMove(InputValue value)
