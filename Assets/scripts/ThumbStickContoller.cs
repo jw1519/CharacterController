@@ -45,7 +45,6 @@ public class ThumbStickContoller : MonoBehaviour
             {
                 player.Move(transform.forward * vertical * Speed * Time.deltaTime);
                 player.ResetPath();
-
             }
             else
             {
@@ -57,19 +56,11 @@ public class ThumbStickContoller : MonoBehaviour
                 animator.SetFloat("speed", Mathf.Abs(vertical));
                 animator.SetFloat("direction", horizontal);
             }
-
         }
-       
     }
-
     void OnMove(InputValue value)
     {
-
         inputvalue = value.Get<Vector2>();
         Debug.Log(inputvalue);
-        //Vector3 input3d = new Vector3(0, 0, input.y);
-        //player.Move(transform.forward * input.y * Speed * Time.deltaTime);
-        //transform.Rotate(Vector3.up, input.x * rotationspeed * Time.deltaTime);
-        //animator.SetFloat("speed", player.velocity.magnitude);
     }
 }

@@ -9,8 +9,6 @@ using UnityEngine.AI;
 
 public class PontAndClick : MonoBehaviour
 {
-    
-    
     public NavMeshAgent player;
     public Animator animator;
     [SerializeField]
@@ -21,8 +19,6 @@ public class PontAndClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-
-
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))

@@ -43,15 +43,13 @@ public class thirdPersonController : MonoBehaviour
             {
                 player.Move(transform.forward * vertical * movementSpeed * Time.deltaTime);
                 player.ResetPath();
-
             }
             else
             {
                 player.Move(-transform.forward * -vertical * movementSpeed * Time.deltaTime);
                 player.ResetPath();
             }
-            //upadtes animation peramitors
-
+            //updates animation peramitors
             if (animator != null)
             {
                 animator.SetFloat("speed", Mathf.Abs(vertical));
