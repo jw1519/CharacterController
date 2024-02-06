@@ -1090,10 +1090,13 @@ MonoBehaviour:
   PauseButton: {fileID: 1973815849}
   exitButton: {fileID: 1785737549}
   claire: {fileID: 361090466}
-  ThumbStickLeft: {fileID: 363002016}
+  thumbStickLeft: {fileID: 0}
   pointAndClickCheck: {fileID: 923427656}
   thirdPersonCheck: {fileID: 2123304062}
   thumbStickLeftCheck: {fileID: 1317784556}
+  checkButtonPointAndClick: {fileID: 923427656}
+  checkButtonThirdPerson: {fileID: 2123304062}
+  checkButtonThumbStickLeft: {fileID: 1317784556}
 --- !u!4 &716367823
 Transform:
   m_ObjectHideFlags: 0

@@ -14,6 +14,10 @@ public class OpenMenu : MonoBehaviour
     public GameObject pointAndClickCheck;
     public GameObject thirdPersonCheck;
     public GameObject thumbStickLeftCheck;
+    
+    public GameObject checkButtonPointAndClick;
+    public GameObject checkButtonThirdPerson;
+    public GameObject checkButtonThumbStickLeft;
 
 
     public void ActivateMenu()
