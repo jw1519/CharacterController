@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
-public class OpenMenu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     public GameObject menuPannel;
 
@@ -16,5 +17,10 @@ public class OpenMenu : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void OpenMenu()
+    {
+        menuPannel.SetActive(menuPannel);
     }
 }
