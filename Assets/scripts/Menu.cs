@@ -16,12 +16,7 @@ public class Menu : MonoBehaviour
     public GameObject tickThirdPerson;
     public GameObject tickThumbStickLeft;
 
-    private void Start()
-    {
-        gameObject.GetComponent<PontAndClick>();
-        gameObject.GetComponent<thirdPersonController>();
-        gameObject.GetComponent<ThumbStickContoller>();
-    }
+
     public void ActivateMenu()
     {
         menuPannel.SetActive(true);
@@ -41,12 +36,12 @@ public class Menu : MonoBehaviour
 
     public void ActivatePointAndClick()
     {
-        //gameObject.GetComponent<PontAndClick>().enabled = true;
+        claire.GetComponent<PontAndClick>().enabled = true;
         tickPointAndClick.SetActive(true);
     }
     public void ActivateThirdPerson()
     {
-        //gameObject.GetComponent<thirdPersonController>().enabled = true;
+        claire.GetComponent<thirdPersonController>().enabled = true;
         tickThirdPerson.SetActive(true);
     }
     public void ActivateThumbStickLeft()
@@ -57,12 +52,12 @@ public class Menu : MonoBehaviour
 
     public void DeactivatePointAndClick()
     {
-        //gameObject.GetComponent<PontAndClick>().enabled = false;
+        claire.GetComponent<PontAndClick>().enabled = false;
         tickPointAndClick.SetActive(false);
     }
     public void DeactivateThirdPerson()
     {
-        //gameObject.GetComponent<thirdPersonController>().enabled = false;
+        claire.GetComponent<thirdPersonController>().enabled = false;
         tickThirdPerson.SetActive(false);
     }
     public void DeactivateThumbStickLeft()
