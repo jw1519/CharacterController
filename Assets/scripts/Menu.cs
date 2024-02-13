@@ -3,71 +3,77 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class OpenMenu : MonoBehaviour
+public class Menu : MonoBehaviour
 {
     public GameObject menuPannel;
-    public GameObject PauseButton;
+    public GameObject pauseButton;
     public GameObject exitButton;
     public GameObject claire;
     public GameObject thumbStickLeft;
 
-    public GameObject pointAndClickCheck;
-    public GameObject thirdPersonCheck;
-    public GameObject thumbStickLeftCheck;
-    
-    public GameObject checkButtonPointAndClick;
-    public GameObject checkButtonThirdPerson;
-    public GameObject checkButtonThumbStickLeft;
+    //tick icon
+    public GameObject tickPointAndClick;
+    public GameObject tickThirdPerson;
+    public GameObject tickThumbStickLeft;
 
-
+    private void Start()
+    {
+        gameObject.GetComponent<PontAndClick>();
+        gameObject.GetComponent<thirdPersonController>();
+        gameObject.GetComponent<ThumbStickContoller>();
+    }
     public void ActivateMenu()
     {
         menuPannel.SetActive(true);
-        PauseButton.SetActive(false);
+        pauseButton.SetActive(false);
         exitButton.SetActive(true);
         claire.SetActive(false);
+        
     }
 
     public void DeactivateMenu()
     {
         menuPannel.SetActive(false);
-        PauseButton.SetActive(true);
+        pauseButton.SetActive(true);
         exitButton.SetActive(false);
         claire.SetActive(true);
     }
 
     public void ActivatePointAndClick()
     {
-        gameObject.GetComponent<PontAndClick>().enabled = true;
-        pointAndClickCheck.SetActive(true);
+        //gameObject.GetComponent<PontAndClick>().enabled = true;
+        tickPointAndClick.SetActive(true);
+        Debug.Log("Click");
     }
     public void ActivateThirdPerson()
     {
-        gameObject.GetComponent<thirdPersonController>().enabled = true;
-        thirdPersonCheck.SetActive(true);
+        //gameObject.GetComponent<thirdPersonController>().enabled = true;
+        tickThirdPerson.SetActive(true);
     }
     public void ActivateThumbStickLeft()
     {
-        gameObject.GetComponent<ThumbStickContoller>().enabled = true;
+        //gameObject.GetComponent<ThumbStickContoller>().enabled = true;
         thumbStickLeft.SetActive(true);
-        thumbStickLeftCheck.SetActive(true);
+        tickThumbStickLeft.SetActive(true);
     }
 
     public void DeactivatePointAndClick()
     {
-        gameObject.GetComponent<PontAndClick>().enabled = false;
-        pointAndClickCheck.SetActive(false);
+        //gameObject.GetComponent<PontAndClick>().enabled = false;
+        Debug.Log("Click");
+        tickPointAndClick.SetActive(false);
     }
     public void DeactivateThirdPerson()
     {
-        gameObject.GetComponent<thirdPersonController>().enabled = false;
-        thirdPersonCheck.SetActive(false);
+        //gameObject.GetComponent<thirdPersonController>().enabled = false;
+        tickThirdPerson.SetActive(false);
     }
     public void DeactivateThumbStickLeft()
     {
-        gameObject.GetComponent<ThumbStickContoller>().enabled = false;
+        //gameObject.GetComponent<ThumbStickContoller>().enabled = false;
         thumbStickLeft.SetActive(false);
-        thumbStickLeftCheck.SetActive(false);
+        Debug.Log("Click!");
+        tickThumbStickLeft.SetActive(false);
     }
 
 

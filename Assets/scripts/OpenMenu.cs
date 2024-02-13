@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Xml.Serialization;
 using UnityEngine;
 
-public class Menu : MonoBehaviour
+public class OpenMenu : MonoBehaviour
 {
     public GameObject menuPannel;
 
@@ -19,7 +19,7 @@ public class Menu : MonoBehaviour
         
     }
 
-    void OpenMenu()
+    void OpenTheMenu()
     {
         menuPannel.SetActive(menuPannel);
     }

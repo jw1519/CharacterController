@@ -515,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &363002017
 RectTransform:
   m_ObjectHideFlags: 0
@@ -951,8 +951,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: ActivatePointAndClick
         m_Mode: 1
         m_Arguments:
@@ -1066,7 +1066,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 716367823}
-  - component: {fileID: 716367822}
+  - component: {fileID: 716367824}
   m_Layer: 0
   m_Name: MenuController
   m_TagString: Untagged
@@ -1074,29 +1074,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &716367822
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 716367821}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e1f779f9526fa2d4587d9f52aee1d160, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  menuPannel: {fileID: 298990456}
-  PauseButton: {fileID: 1973815849}
-  exitButton: {fileID: 1785737549}
-  claire: {fileID: 361090466}
-  thumbStickLeft: {fileID: 0}
-  pointAndClickCheck: {fileID: 923427656}
-  thirdPersonCheck: {fileID: 2123304062}
-  thumbStickLeftCheck: {fileID: 1317784556}
-  checkButtonPointAndClick: {fileID: 923427656}
-  checkButtonThirdPerson: {fileID: 2123304062}
-  checkButtonThumbStickLeft: {fileID: 1317784556}
 --- !u!4 &716367823
 Transform:
   m_ObjectHideFlags: 0
@@ -1112,6 +1089,26 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &716367824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 716367821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1f779f9526fa2d4587d9f52aee1d160, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPannel: {fileID: 298990456}
+  pauseButton: {fileID: 1973815849}
+  exitButton: {fileID: 1785737549}
+  claire: {fileID: 361090466}
+  thumbStickLeft: {fileID: 363002016}
+  tickPointAndClick: {fileID: 923427656}
+  tickThirdPerson: {fileID: 2123304062}
+  tickThumbStickLeft: {fileID: 1317784556}
 --- !u!1 &866422932
 GameObject:
   m_ObjectHideFlags: 0
@@ -1303,8 +1300,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: ActivateThumbStickLeft
         m_Mode: 1
         m_Arguments:
@@ -1459,8 +1456,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: DeactivatePointAndClick
         m_Mode: 1
         m_Arguments:
@@ -1852,8 +1849,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: DeactivateThumbStickLeft
         m_Mode: 1
         m_Arguments:
@@ -2048,8 +2045,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: ActivateThirdPerson
         m_Mode: 1
         m_Arguments:
@@ -2142,8 +2139,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: DeactivateMenu
         m_Mode: 1
         m_Arguments:
@@ -2513,8 +2510,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: ActivateMenu
         m_Mode: 1
         m_Arguments:
@@ -2812,8 +2809,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 716367822}
-        m_TargetAssemblyTypeName: OpenMenu, Assembly-CSharp
+      - m_Target: {fileID: 716367824}
+        m_TargetAssemblyTypeName: Menu, Assembly-CSharp
         m_MethodName: DeactivateThirdPerson
         m_Mode: 1
         m_Arguments:
