@@ -38,6 +38,7 @@ public class Menu : MonoBehaviour
     {
         claire.GetComponent<PontAndClick>().enabled = true;
         tickPointAndClick.SetActive(true);
+        DeactivateThumbStickLeft();
     }
     public void ActivateThirdPerson()
     {
@@ -48,6 +49,7 @@ public class Menu : MonoBehaviour
     {
         thumbStickLeft.SetActive(true);
         tickThumbStickLeft.SetActive(true);
+        DeactivatePointAndClick();
     }
 
     public void DeactivatePointAndClick()
