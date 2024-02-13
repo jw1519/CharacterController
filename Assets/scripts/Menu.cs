@@ -43,7 +43,6 @@ public class Menu : MonoBehaviour
     {
         //gameObject.GetComponent<PontAndClick>().enabled = true;
         tickPointAndClick.SetActive(true);
-        Debug.Log("Click");
     }
     public void ActivateThirdPerson()
     {
@@ -52,7 +51,6 @@ public class Menu : MonoBehaviour
     }
     public void ActivateThumbStickLeft()
     {
-        //gameObject.GetComponent<ThumbStickContoller>().enabled = true;
         thumbStickLeft.SetActive(true);
         tickThumbStickLeft.SetActive(true);
     }
@@ -60,7 +58,6 @@ public class Menu : MonoBehaviour
     public void DeactivatePointAndClick()
     {
         //gameObject.GetComponent<PontAndClick>().enabled = false;
-        Debug.Log("Click");
         tickPointAndClick.SetActive(false);
     }
     public void DeactivateThirdPerson()
@@ -70,9 +67,7 @@ public class Menu : MonoBehaviour
     }
     public void DeactivateThumbStickLeft()
     {
-        //gameObject.GetComponent<ThumbStickContoller>().enabled = false;
         thumbStickLeft.SetActive(false);
-        Debug.Log("Click!");
         tickThumbStickLeft.SetActive(false);
     }
 
