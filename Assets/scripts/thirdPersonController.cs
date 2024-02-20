@@ -10,16 +10,16 @@ public class thirdPersonController : MonoBehaviour
 
     private float gravity = -9.81f;//earths gravity
     private CharacterController characterController;
-    private NavMeshAgent player;
+    private NavMeshAgent Player;
     private Vector3 Velocity;
-    private Animator animator;
+    private Animator Animator;
 
     // Start is called before the first frame update
     void Start()
     {
         characterController = GetComponent<CharacterController>();
-        player = GetComponent<NavMeshAgent>();
-        animator = GetComponent<Animator>();
+        Player = GetComponent<NavMeshAgent>();
+        Animator = GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -34,26 +34,26 @@ public class thirdPersonController : MonoBehaviour
         if(horizontal != 0)
         {
             transform.Rotate(Vector3.up, horizontal * rotationspeed * Time.deltaTime);
-            player.ResetPath();
+            Player.ResetPath();
         }
         //move character
         if(direction.magnitude>= 0.1f)
         {
             if(vertical >= 0)
             {
-                player.Move(transform.forward * vertical * movementSpeed * Time.deltaTime);
-                player.ResetPath();
+                Player.Move(transform.forward * vertical * movementSpeed * Time.deltaTime);
+                Player.ResetPath();
             }
             else
             {
-                player.Move(-transform.forward * -vertical * movementSpeed * Time.deltaTime);
-                player.ResetPath();
+                Player.Move(-transform.forward * -vertical * movementSpeed * Time.deltaTime);
+                Player.ResetPath();
             }
             //updates animation peramitors
-            if (animator != null)
+            if (Animator != null)
             {
-                animator.SetFloat("speed", Mathf.Abs(vertical));
-                animator.SetFloat("direction", horizontal);
+                Animator.SetFloat("speed", Mathf.Abs(vertical));
+                Animator.SetFloat("direction", horizontal);
             }
         }
 
@@ -64,7 +64,7 @@ public class thirdPersonController : MonoBehaviour
         }
 
         Velocity.y += gravity * Time.deltaTime;
-        player.Move(Velocity * Time.deltaTime);
+        Player.Move(Velocity * Time.deltaTime);
 
         
     }

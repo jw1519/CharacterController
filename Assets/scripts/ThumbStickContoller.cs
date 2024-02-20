@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 
 public class ThumbStickContoller : MonoBehaviour
 {
-    public float Speed = 2.0f;
+    public float speed = 2.0f;
     public NavMeshAgent player;
     public Animator animator;
     public float rotationspeed = 100.0f;
@@ -44,12 +44,12 @@ public class ThumbStickContoller : MonoBehaviour
         {
             if (vertical >= 0)
             {
-                player.Move(transform.forward * vertical * Speed * Time.deltaTime);
+                player.Move(transform.forward * vertical * speed * Time.deltaTime);
                 player.ResetPath();
             }
             else
             {
-                player.Move(-transform.forward * -vertical * Speed * Time.deltaTime);
+                player.Move(-transform.forward * -vertical * speed * Time.deltaTime);
                 player.ResetPath();
             }
         }

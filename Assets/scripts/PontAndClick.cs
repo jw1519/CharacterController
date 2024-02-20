@@ -12,7 +12,7 @@ public class PontAndClick : MonoBehaviour
     public NavMeshAgent player;
     public Animator animator;
     [SerializeField]
-    private Vector3 target;
+    private Vector3 Target;
 
     // Update is called once per frame
     private void Update()
@@ -23,13 +23,14 @@ public class PontAndClick : MonoBehaviour
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {
-                target = hit.point;
-                player.SetDestination(target);
+                Target = hit.point;
+                player.SetDestination(Target);
             }
             
         }
         if (animator != null)
         {
+            if (Target != null)
             animator.SetFloat("speed", player.velocity.magnitude);
         }
     }
