@@ -19,7 +19,7 @@ public class PontAndClick : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //find mouse position
             RaycastHit hit;
             if (Physics.Raycast(ray, out hit))
             {

@@ -375,14 +375,14 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 361090466}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1c6e90b692fd8474cae80409bb1cb318, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 361090471}
   animator: {fileID: 361090467}
-  target: {x: 0, y: 0, z: 0}
+  Target: {x: 0, y: 0, z: 0}
 --- !u!114 &361090469
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -492,7 +492,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 097d93c697b6d4945aecd0d9525b12a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Speed: 2
+  speed: 2
   player: {fileID: 0}
   animator: {fileID: 361090467}
   rotationspeed: 100
@@ -515,7 +515,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &363002017
 RectTransform:
   m_ObjectHideFlags: 0
