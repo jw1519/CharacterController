@@ -3,69 +3,72 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 
-public class thirdPersonController : MonoBehaviour
+namespace charactercontroller
 {
-    public float movementSpeed = 3.0f;
-    public float rotationspeed = 100.0f;
-
-    private float gravity = -9.81f;//earths gravity
-    private CharacterController characterController;
-    private NavMeshAgent Player;
-    private Vector3 Velocity;
-    private Animator Animator;
-
-    // Start is called before the first frame update
-    void Start()
+    public class thirdPersonController : MonoBehaviour
     {
-        characterController = GetComponent<CharacterController>();
-        Player = GetComponent<NavMeshAgent>();
-        Animator = GetComponent<Animator>();
-    }
+        public float movementSpeed = 3.0f;
+        public float rotationspeed = 100.0f;
 
-    // Update is called once per frame
-    void Update()
-    {
-        float horizontal = Input.GetAxis("Horizontal");
-        float vertical = Input.GetAxis("Vertical");
+        private float gravity = -9.81f;//earths gravity
+        private CharacterController characterController;
+        private NavMeshAgent Player;
+        private Vector3 Velocity;
+        private Animator Animator;
 
-        Vector3 direction = new Vector3(0, 0, vertical).normalized;
-
-        //rotate character
-        if(horizontal != 0)
+        // Start is called before the first frame update
+        void Start()
         {
-            transform.Rotate(Vector3.up, horizontal * rotationspeed * Time.deltaTime);
-            Player.ResetPath();
+            characterController = GetComponent<CharacterController>();
+            Player = GetComponent<NavMeshAgent>();
+            Animator = GetComponent<Animator>();
         }
-        //move character
-        if(direction.magnitude>= 0.1f)
+
+        // Update is called once per frame
+        void Update()
         {
-            if(vertical >= 0)
+            float horizontal = Input.GetAxis("Horizontal");
+            float vertical = Input.GetAxis("Vertical");
+
+            Vector3 direction = new Vector3(0, 0, vertical).normalized;
+
+            //rotate character
+            if (horizontal != 0)
             {
-                Player.Move(transform.forward * vertical * movementSpeed * Time.deltaTime);
+                transform.Rotate(Vector3.up, horizontal * rotationspeed * Time.deltaTime);
                 Player.ResetPath();
             }
-            else
+            //move character
+            if (direction.magnitude >= 0.1f)
             {
-                Player.Move(-transform.forward * -vertical * movementSpeed * Time.deltaTime);
-                Player.ResetPath();
+                if (vertical >= 0)
+                {
+                    Player.Move(transform.forward * vertical * movementSpeed * Time.deltaTime);
+                    Player.ResetPath();
+                }
+                else
+                {
+                    Player.Move(-transform.forward * -vertical * movementSpeed * Time.deltaTime);
+                    Player.ResetPath();
+                }
+                //updates animation peramitors
+                if (Animator != null)
+                {
+                    Animator.SetFloat("speed", Mathf.Abs(vertical));
+                    Animator.SetFloat("direction", horizontal);
+                }
             }
-            //updates animation peramitors
-            if (Animator != null)
+
+            //gravity apply
+            if (characterController.isGrounded && Velocity.y < 0)
             {
-                Animator.SetFloat("speed", Mathf.Abs(vertical));
-                Animator.SetFloat("direction", horizontal);
+                Velocity.y = 0;
             }
+
+            Velocity.y += gravity * Time.deltaTime;
+            Player.Move(Velocity * Time.deltaTime);
+
+
         }
-
-        //gravity apply
-        if(characterController.isGrounded && Velocity.y < 0)
-        {
-            Velocity.y = 0;
-        }
-
-        Velocity.y += gravity * Time.deltaTime;
-        Player.Move(Velocity * Time.deltaTime);
-
-        
     }
 }

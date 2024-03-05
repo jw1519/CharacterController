@@ -6,32 +6,34 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.AI;
 
-
-public class PontAndClick : MonoBehaviour
+namespace charactercontroller
 {
-    public NavMeshAgent player;
-    public Animator animator;
-    [SerializeField]
-    private Vector3 Target;
-
-    // Update is called once per frame
-    private void Update()
+    public class PontAndClick : MonoBehaviour
     {
-        if (Input.GetMouseButtonDown(0))
+        public NavMeshAgent player;
+        public Animator animator;
+        [SerializeField]
+        private Vector3 Target;
+
+        // Update is called once per frame
+        private void Update()
         {
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //find mouse position
-            RaycastHit hit;
-            if (Physics.Raycast(ray, out hit))
+            if (Input.GetMouseButtonDown(0))
             {
-                Target = hit.point;
-                player.SetDestination(Target);
+                Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition); //find mouse position
+                RaycastHit hit;
+                if (Physics.Raycast(ray, out hit))
+                {
+                    Target = hit.point;
+                    player.SetDestination(Target);
+                }
+
             }
-            
-        }
-        if (animator != null)
-        {
-            if (Target != null)
-            animator.SetFloat("speed", player.velocity.magnitude);
+            if (animator != null)
+            {
+                if (Target != null)
+                    animator.SetFloat("speed", player.velocity.magnitude);
+            }
         }
     }
 }
