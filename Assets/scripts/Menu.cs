@@ -48,6 +48,7 @@ namespace charactercontroller
         }
         public void ActivateThumbStickLeft()
         {
+            claire.GetComponent<ThumbStickContoller>().enabled = true;
             thumbStickLeft.SetActive(true);
             tickThumbStickLeft.SetActive(true);
             DeactivatePointAndClick();
@@ -65,6 +66,7 @@ namespace charactercontroller
         }
         public void DeactivateThumbStickLeft()
         {
+            claire.GetComponent<ThumbStickContoller>().enabled = false;
             thumbStickLeft.SetActive(false);
             tickThumbStickLeft.SetActive(false);
         }
